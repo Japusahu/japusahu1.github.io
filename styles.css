@@ -1,0 +1,332 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Navbar */
+header {
+    background-color: #141414;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav h1 {
+    color: #3498db; /* Blue accent */
+    font-size: 1.5rem;
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 2rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Button Styles */
+button,
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #e0e0e0;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+button:hover,
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    padding: 2rem;
+}
+
+.cta-button {
+    text-decoration: none;
+}
+
+/* Game Section */
+#game {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1px;
+}
+
+#gameCanvas {
+    border: 0px solid #000000;
+    background-color: #000;
+}
+
+#score {
+    font-size: 1.2rem;
+    color: #3498db;
+    margin-top: 1rem;
+}
+
+/* Form Styling */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #141414;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+    font-weight: bold;
+    color: #3498db;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1rem 0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+form button {
+    width: 100%;
+}
+
+/* Switch Link Styles */
+.switch-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.switch-link a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.switch-link a:hover {
+    color: #2980b9;
+}
+
+/* Leaderboard Section */
+#leaderboard {
+    text-align: center;
+    padding: 2rem;
+}
+
+.leaderboard-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #141414;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-container ul {
+    list-style-type: none;
+}
+
+.leaderboard-container li {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    color: #3498db;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #141414;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #3498db;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links a {
+        margin: 0 0.2rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+}
+
+/* Password Criteria Styling */
+#passwordCriteria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: #ccc;
+}
+
+#passwordCriteria .criteria {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-size: 0.75rem;
+}
+
+
+
+.criteria.passed {
+    color: #3498db;
+    text-decoration: line-through;
+}
+
+.snake {
+    background-color: #3498db; /* Snake color */
+    border-radius: 4px; /* Rounded edges */
+}
+
+
+#loginModal, #signupModal {
+    display: none; /* Hide modals by default */
+}
+
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#controls div {
+    display: flex;
+    justify-content: center;
+}
+
+#controls button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    width: 70px; /* Fixed width for uniform buttons */
+}
+
+#controls button:hover {
+    background-color: #2980b9;
+}
+
+/* Additional styles for spacing and alignment */
+#upButton {
+    margin-bottom: 10px; /* Space above the up button */
+}
+
+#downButton {
+    margin-top: 10px; /* Space below the down button */
+}
+
+
+
+/* change bg colour of the canvas  */
+
+.startButton{
+    background-color: none;
+    color: white;
+    border: none;
+}
+
+.gameCanvas{
+    border: none;
+}
