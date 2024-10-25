@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="sticky-navbar">
+            <h1>Snake Game</h1>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#game">Game</a>
+                <a href="#leaderboard">Leaderboard</a>
+                <a href="#" id="loginLink" onclick="openModal('loginModal')">Login</a>
+                <a href="#" id="signupLink" onclick="openModal('signupModal')">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to the Snake Game</h2>
+        <p>Play the classic Snake Game and challenge yourself to beat your highest score!</p>
+        <!-- <a href="#game" class="cta-button">Start Playing</a> -->
+    </section>
+
+    <!-- Game Section -->
+    <section id="game">
+        <h2>Snake Game</h2>
+        <div class="game-container">
+            <div id="scoreBoard">
+                <p>Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></p>
+            </div>
+            <button id="startButton"><canvas id="gameCanvas" width="400" height="400"></canvas></button>
+            
+            <div id="scoreBoard">
+                <p>Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></p>
+            </div>
+
+            <div id="controls">
+                <button id="upButton">Up</button>
+                <div>
+                    <button id="leftButton">Left</button>
+                    <button id="downButton">Down</button>
+                    <button id="rightButton">Right</button>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard">
+        <h2>Leaderboard</h2>
+        <div class="leaderboard-container">
+            <ul id="leaderboardList">
+                <li>Japu - Score: 120</li>
+                <li>Papu - Score: 95</li>
+                <li>Dipu - Score: 85</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+                <button type="submit">Login</button>
+                <div class="switch-link">
+                    <a href="#" onclick="toggleModal('loginModal', 'signupModal')">Don't have an account? Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" required>
+                
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" required oninput="checkPasswordStrength()">
+                
+                <label for="signupConfirmPassword">Confirm Password:</label>
+                <input type="password" id="signupConfirmPassword" required>
+                
+                <div id="passwordCriteria">
+                    <span id="length" class="criteria">8+ chars</span>
+                    <span id="uppercase" class="criteria">Uppercase</span>
+                    <span id="lowercase" class="criteria">Lowercase</span>
+                    <span id="number" class="criteria">Number</span>
+                    <span id="special" class="criteria">Special char</span>
+                </div>                
+                
+                <button type="submit">Sign Up</button>
+                <div class="switch-link">
+                    <a href="#" onclick="toggleModal('signupModal', 'loginModal')">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
